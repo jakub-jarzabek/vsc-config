@@ -1,4 +1,7 @@
-{
+// Indent Line Numbers
+  "indenticator.color.dark": "#ffc0cb",
+  "indenticator.color.light": "#ffc0cb",
+
   // Improvements
   "editor.quickSuggestionsDelay": 0,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -7,28 +10,15 @@
   "workbench.colorCustomizations": {
     "editorLineNumber.activeForeground": "#fff",
     "editorLineNumber.foreground": "#444",
-    "editorCursor.foreground": "#d323d9",
-    "terminalCursor.foreground": "#d323d9"
+    "editor.lineHighlightBackground": "#ffc0cb27"
   },
+  // Line Cursor
 
   // ESLint / Prettier config
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": false
-  },
-  // Formaters
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": ["javascript", "typescript"], // ,
@@ -42,41 +32,31 @@
   "bladeFormatter.format.wrapAttributes": "preserve",
   "html.format.wrapLineLength": 400,
   "editor.formatOnSave": true,
-  "editor.fontSize": 16,
-  "files.autoSave": "onFocusChange",
+  "editor.fontSize": 18,
+  "terminal.integrated.fontSize": 14,
   "workbench.tree.indent": 20,
-  "editor.fontFamily": "Fira Code, monospace",
-  "editor.fontLigatures": true,
-  "editor.fontWeight": "300",
-  "editor.wordWrap": "on",
+  "editor.fontWeight": "500",
+  "editor.fontFamily": "'JetBrains Mono','Fira Code',monospace", // Operator Mono
+  "editor.fontLigatures": false,
+  "editor.wordWrap": "off",
   "editor.tabSize": 2,
   "bracket-pair-colorizer-2.showVerticalScopeLine": false,
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "material-icon-theme", // 4
   "editor.minimap.enabled": false,
   "editor.smoothScrolling": true,
-  "editor.cursorBlinking": "expand",
+  "editor.cursorBlinking": "solid",
   "editor.lineNumbers": "on",
   "editor.cursorWidth": 4,
   "editor.parameterHints.enabled": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.padding.top": 30,
-  "trailing-spaces.trimOnSave": true,
-  "highlight-matching-tag.styles": {
-    "opening": {
-      "full": {
-        "highlight": "rgba(20, 180, 80, 0.3)"
-      }
-    },
-    "closing": {
-      "full": {
-        "highlight": "rgba(20, 180, 80, 0.3)"
-      }
-    }
-  },
+
   "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+  "vscode_custom_css.imports": ["file:///Users/Adam/.vscode/hide-top-bar.css"],
+  "vscode_custom_css.policy": true,
   "editor.overviewRulerBorder": false,
   "editor.hover.enabled": true,
   "quokka.suppressGlyphMarginNotifications": false,
@@ -101,7 +81,6 @@
     "**/.history": true,
     "**/tmp": true,
     "**/.cache": true,
-    "**/node_modules": true,
     "**/.vscode": true,
     ".idea/": true
   },
@@ -112,6 +91,7 @@
   },
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "right",
+
   "workbench.startupEditor": "none",
   "explorer.confirmDelete": false,
   "open-in-browser.default": "brave",
@@ -119,11 +99,10 @@
   "editor.renderControlCharacters": false,
   "editor.renderIndentGuides": false,
   "editor.matchBrackets": "never",
-  "editor.renderLineHighlight": "none",
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  "editor.renderLineHighlight": "line",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "workbench.colorTheme": "Dracula Soft",
   "workbench.editor.showTabs": false,
 
   // Breadcrumbs settings
@@ -157,9 +136,101 @@
 
   "tabnine.experimentalAutoImports": true,
 
-  // Terminal
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "monospace",
-  "window.zoomLevel": 1
+  // Live server
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Vim
+  "files.autoSave": "onFocusChange",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.easymotionMarkerooundColor": "#020202",
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.view.explorer"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-j>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["g", "c", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["g", "l"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["_"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
+    },
+
+    {
+      "before": ["<leader>", "t", "u"],
+      "commands": ["editor.action.transformToUppercase"]
+    },
+    {
+      "before": ["<leader>", "t", "l"],
+      "commands": ["editor.action.transformToLowercase"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    // VS Code new marker @ next occurence
+    "<C-d>": false,
+    // Copy
+    "<C-c>": false,
+    // Cut
+    "<C-x>": false,
+    // Paste
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false
+  }
 }
